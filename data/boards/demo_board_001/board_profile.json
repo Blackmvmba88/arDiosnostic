@@ -1,0 +1,81 @@
+{
+  "board_id": "demo_board_001",
+  "name": "Demo Board",
+  "revision": "A",
+  "units": "px",
+  "scale_mm_per_px": null,
+  "images": {
+    "top": "reference_top.png",
+    "bottom": "reference_bottom.png"
+  },
+  "components": [
+    {
+      "ref": "C1",
+      "type": "capacitor",
+      "value": "100nF",
+      "package": "0603",
+      "x": 120,
+      "y": 90,
+      "rotation": 0,
+      "net": "PP3V3",
+      "optional": false
+    },
+    {
+      "ref": "R1",
+      "type": "resistor",
+      "value": "10k",
+      "package": "0603",
+      "x": 180,
+      "y": 90,
+      "rotation": 90,
+      "net": "RESET_L",
+      "optional": false
+    },
+    {
+      "ref": "U1",
+      "type": "ic",
+      "value": "LDO_REGULATOR",
+      "package": "SOT-23-5",
+      "x": 220,
+      "y": 160,
+      "rotation": 0,
+      "net": "PP3V3",
+      "optional": false
+    }
+  ],
+  "rails": [
+    {
+      "name": "PP5V",
+      "expected_voltage": 5.0,
+      "tolerance_percent": 10,
+      "max_current": 0.5,
+      "test_points": ["TP5V"]
+    },
+    {
+      "name": "PP3V3",
+      "expected_voltage": 3.3,
+      "tolerance_percent": 10,
+      "max_current": 0.3,
+      "test_points": ["TP3V3"]
+    }
+  ],
+  "test_points": [
+    {
+      "id": "TP5V",
+      "x": 60,
+      "y": 60,
+      "rail": "PP5V",
+      "expected_voltage": 5.0,
+      "notes": "main 5V input rail"
+    },
+    {
+      "id": "TP3V3",
+      "x": 90,
+      "y": 60,
+      "rail": "PP3V3",
+      "expected_voltage": 3.3,
+      "notes": "regulated 3.3V rail"
+    }
+  ],
+  "repair_history": []
+}
